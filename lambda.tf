@@ -3,8 +3,8 @@ resource "aws_lambda_function" "example" {
   function_name = "ServerlessExample"
 
   # The bucket name as created earlier with "aws s3api create-bucket"
-  //s3_bucket = "terraform-serverless-jrdevops-sonia"//aws_s3_bucket.mybucket.id
-  //s3_key    = "v1.0.0/example.zip"//aws_s3_bucket_object.example.key
+  s3_bucket = aws_s3_bucket.mybucket.id
+  s3_key    = aws_s3_bucket_object.example.key
 
 
   # "main" is the filename within the zip file (main.js) and "handler"
